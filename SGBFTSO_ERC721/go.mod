@@ -1,4 +1,4 @@
-module github.com/xrpdevs/golang-sgbnft-binding/ERC721
+module github.com/xrpdevs/golang-sgbnft-binding/SGBFTSO_ERC721
 
 go 1.17
 
