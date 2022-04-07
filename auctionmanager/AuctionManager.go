@@ -1,4 +1,7 @@
-package auctionmanager
+// Code generated - DO NOT EDIT.
+// This file is a generated binding and any manual changes will be lost.
+
+package AM
 
 import (
 	"errors"
@@ -27,7 +30,7 @@ var (
 
 // AMMetaData contains all meta data concerning the AM contract.
 var AMMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"}],\"name\":\"auctionNoWinner\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"winningAmount\",\"type\":\"uint256\"}],\"name\":\"auctionWinner\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"royRecipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"royPayout\",\"type\":\"uint256\"}],\"name\":\"erc2981Fee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalamount\",\"type\":\"uint256\"}],\"name\":\"increaseBid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"newBid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"listedBy\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reserveAmount\",\"type\":\"uint256\"}],\"name\":\"newListing\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"losingBidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newHighBidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newHighBid\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"refundedAmount\",\"type\":\"uint256\"}],\"name\":\"outBid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"payee\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"}],\"name\":\"paymentSent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"tokenOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"removalFee\",\"type\":\"uint256\"}],\"name\":\"removedListing\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"auctionBids\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isRunning\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auctionID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bidderAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"ownerAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reserveAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"finishTime\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"finalizeOnReserveMet\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"bidHistory\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bidderAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"earlyFinalize\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"removeListing\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"salesFee\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"bidIncrement\",\"type\":\"uint8\"}],\"name\":\"configureFeePercentages\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reserve\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"finalizeOnReserveMet\",\"type\":\"bool\"}],\"name\":\"createAuction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"earlyFinalizeFeePercentage\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"finalizeAuction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"finalizeEarly\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getHighBid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bidderAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getOwnerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"tokenOwner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"heldBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_heldBalance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"minNextBidAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"minBid\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nextBidMinPercentage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"removeListingBeforeEndTime\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"removeListingFeePercentage\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"salesFeePercentage\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"setup\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"showFeesAccrued\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"acFees\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"submitNewBid\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"}],\"name\":\"auctionNoWinner\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"winningAmount\",\"type\":\"uint256\"}],\"name\":\"auctionWinner\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"royRecipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"royPayout\",\"type\":\"uint256\"}],\"name\":\"erc2981Fee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalamount\",\"type\":\"uint256\"}],\"name\":\"increaseBid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"newBid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"listedBy\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reserveAmount\",\"type\":\"uint256\"}],\"name\":\"newListing\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"losingBidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newHighBidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newHighBid\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"refundedAmount\",\"type\":\"uint256\"}],\"name\":\"outBid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"payee\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"}],\"name\":\"paymentSent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"auctionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"tokenOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"removalFee\",\"type\":\"uint256\"}],\"name\":\"removedListing\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"auctionBids\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isRunning\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auctionID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bidderAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"ownerAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reserveAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"finishTime\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"finalizeOnReserveMet\",\"type\":\"bool\"},{\"internalType\":\"bytes32\",\"name\":\"finishNote\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"willCloseAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"buyerFee\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"auctionHistory\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isRunning\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auctionID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bidderAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"ownerAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reserveAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"finishTime\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"finalizeOnReserveMet\",\"type\":\"bool\"},{\"internalType\":\"bytes32\",\"name\":\"finishNote\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"willCloseAt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"buyerFee\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"bidHistory\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bidderAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"earlyFinalize\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"removeListing\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"salesFee\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"bidIncrement\",\"type\":\"uint8\"}],\"name\":\"configureFeePercentages\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reserve\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"finalizeOnReserveMet\",\"type\":\"bool\"}],\"name\":\"createAuction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"earlyFinalizeFeePercentage\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"finalizeAuction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"finalizeEarly\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"}],\"name\":\"getAuctionData\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"isRunning\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"auctionID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bidderAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"ownerAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reserveAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"finishTime\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"finalizeOnReserveMet\",\"type\":\"bool\"},{\"internalType\":\"bytes32\",\"name\":\"finishNote\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"willCloseAt\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getHighBid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"bidderAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getOwnerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"tokenOwner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"heldBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_heldBalance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"minNextBidAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"minBid\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nextBidMinPercentage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"removeListingBeforeEndTime\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"removeListingFeePercentage\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"salesFeePercentage\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"setup\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"showFeesAccrued\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"acFees\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"nftContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"submitNewBid\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // AMABI is the input ABI used to generate the binding from.
@@ -178,7 +181,7 @@ func (_AM *AMTransactorRaw) Transact(opts *bind.TransactOpts, method string, par
 
 // AuctionBids is a free data retrieval call binding the contract method 0x299a0e1e.
 //
-// Solidity: function auctionBids(address , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet)
+// Solidity: function auctionBids(address , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt, uint256 buyerFee)
 func (_AM *AMCaller) AuctionBids(opts *bind.CallOpts, arg0 common.Address, arg1 *big.Int) (struct {
 	IsRunning            bool
 	AuctionID            *big.Int
@@ -189,6 +192,9 @@ func (_AM *AMCaller) AuctionBids(opts *bind.CallOpts, arg0 common.Address, arg1 
 	ReserveAmount        *big.Int
 	FinishTime           *big.Int
 	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+	BuyerFee             *big.Int
 }, error) {
 	var out []interface{}
 	err := _AM.contract.Call(opts, &out, "auctionBids", arg0, arg1)
@@ -203,6 +209,9 @@ func (_AM *AMCaller) AuctionBids(opts *bind.CallOpts, arg0 common.Address, arg1 
 		ReserveAmount        *big.Int
 		FinishTime           *big.Int
 		FinalizeOnReserveMet bool
+		FinishNote           [32]byte
+		WillCloseAt          *big.Int
+		BuyerFee             *big.Int
 	})
 	if err != nil {
 		return *outstruct, err
@@ -217,6 +226,9 @@ func (_AM *AMCaller) AuctionBids(opts *bind.CallOpts, arg0 common.Address, arg1 
 	outstruct.ReserveAmount = *abi.ConvertType(out[6], new(*big.Int)).(**big.Int)
 	outstruct.FinishTime = *abi.ConvertType(out[7], new(*big.Int)).(**big.Int)
 	outstruct.FinalizeOnReserveMet = *abi.ConvertType(out[8], new(bool)).(*bool)
+	outstruct.FinishNote = *abi.ConvertType(out[9], new([32]byte)).(*[32]byte)
+	outstruct.WillCloseAt = *abi.ConvertType(out[10], new(*big.Int)).(**big.Int)
+	outstruct.BuyerFee = *abi.ConvertType(out[11], new(*big.Int)).(**big.Int)
 
 	return *outstruct, err
 
@@ -224,7 +236,7 @@ func (_AM *AMCaller) AuctionBids(opts *bind.CallOpts, arg0 common.Address, arg1 
 
 // AuctionBids is a free data retrieval call binding the contract method 0x299a0e1e.
 //
-// Solidity: function auctionBids(address , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet)
+// Solidity: function auctionBids(address , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt, uint256 buyerFee)
 func (_AM *AMSession) AuctionBids(arg0 common.Address, arg1 *big.Int) (struct {
 	IsRunning            bool
 	AuctionID            *big.Int
@@ -235,13 +247,16 @@ func (_AM *AMSession) AuctionBids(arg0 common.Address, arg1 *big.Int) (struct {
 	ReserveAmount        *big.Int
 	FinishTime           *big.Int
 	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+	BuyerFee             *big.Int
 }, error) {
 	return _AM.Contract.AuctionBids(&_AM.CallOpts, arg0, arg1)
 }
 
 // AuctionBids is a free data retrieval call binding the contract method 0x299a0e1e.
 //
-// Solidity: function auctionBids(address , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet)
+// Solidity: function auctionBids(address , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt, uint256 buyerFee)
 func (_AM *AMCallerSession) AuctionBids(arg0 common.Address, arg1 *big.Int) (struct {
 	IsRunning            bool
 	AuctionID            *big.Int
@@ -252,8 +267,106 @@ func (_AM *AMCallerSession) AuctionBids(arg0 common.Address, arg1 *big.Int) (str
 	ReserveAmount        *big.Int
 	FinishTime           *big.Int
 	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+	BuyerFee             *big.Int
 }, error) {
 	return _AM.Contract.AuctionBids(&_AM.CallOpts, arg0, arg1)
+}
+
+// AuctionHistory is a free data retrieval call binding the contract method 0x392b9a5d.
+//
+// Solidity: function auctionHistory(address , uint256 , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt, uint256 buyerFee)
+func (_AM *AMCaller) AuctionHistory(opts *bind.CallOpts, arg0 common.Address, arg1 *big.Int, arg2 *big.Int) (struct {
+	IsRunning            bool
+	AuctionID            *big.Int
+	BidderAddress        common.Address
+	OwnerAddress         common.Address
+	BidAmount            *big.Int
+	Timestamp            *big.Int
+	ReserveAmount        *big.Int
+	FinishTime           *big.Int
+	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+	BuyerFee             *big.Int
+}, error) {
+	var out []interface{}
+	err := _AM.contract.Call(opts, &out, "auctionHistory", arg0, arg1, arg2)
+
+	outstruct := new(struct {
+		IsRunning            bool
+		AuctionID            *big.Int
+		BidderAddress        common.Address
+		OwnerAddress         common.Address
+		BidAmount            *big.Int
+		Timestamp            *big.Int
+		ReserveAmount        *big.Int
+		FinishTime           *big.Int
+		FinalizeOnReserveMet bool
+		FinishNote           [32]byte
+		WillCloseAt          *big.Int
+		BuyerFee             *big.Int
+	})
+	if err != nil {
+		return *outstruct, err
+	}
+
+	outstruct.IsRunning = *abi.ConvertType(out[0], new(bool)).(*bool)
+	outstruct.AuctionID = *abi.ConvertType(out[1], new(*big.Int)).(**big.Int)
+	outstruct.BidderAddress = *abi.ConvertType(out[2], new(common.Address)).(*common.Address)
+	outstruct.OwnerAddress = *abi.ConvertType(out[3], new(common.Address)).(*common.Address)
+	outstruct.BidAmount = *abi.ConvertType(out[4], new(*big.Int)).(**big.Int)
+	outstruct.Timestamp = *abi.ConvertType(out[5], new(*big.Int)).(**big.Int)
+	outstruct.ReserveAmount = *abi.ConvertType(out[6], new(*big.Int)).(**big.Int)
+	outstruct.FinishTime = *abi.ConvertType(out[7], new(*big.Int)).(**big.Int)
+	outstruct.FinalizeOnReserveMet = *abi.ConvertType(out[8], new(bool)).(*bool)
+	outstruct.FinishNote = *abi.ConvertType(out[9], new([32]byte)).(*[32]byte)
+	outstruct.WillCloseAt = *abi.ConvertType(out[10], new(*big.Int)).(**big.Int)
+	outstruct.BuyerFee = *abi.ConvertType(out[11], new(*big.Int)).(**big.Int)
+
+	return *outstruct, err
+
+}
+
+// AuctionHistory is a free data retrieval call binding the contract method 0x392b9a5d.
+//
+// Solidity: function auctionHistory(address , uint256 , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt, uint256 buyerFee)
+func (_AM *AMSession) AuctionHistory(arg0 common.Address, arg1 *big.Int, arg2 *big.Int) (struct {
+	IsRunning            bool
+	AuctionID            *big.Int
+	BidderAddress        common.Address
+	OwnerAddress         common.Address
+	BidAmount            *big.Int
+	Timestamp            *big.Int
+	ReserveAmount        *big.Int
+	FinishTime           *big.Int
+	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+	BuyerFee             *big.Int
+}, error) {
+	return _AM.Contract.AuctionHistory(&_AM.CallOpts, arg0, arg1, arg2)
+}
+
+// AuctionHistory is a free data retrieval call binding the contract method 0x392b9a5d.
+//
+// Solidity: function auctionHistory(address , uint256 , uint256 ) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt, uint256 buyerFee)
+func (_AM *AMCallerSession) AuctionHistory(arg0 common.Address, arg1 *big.Int, arg2 *big.Int) (struct {
+	IsRunning            bool
+	AuctionID            *big.Int
+	BidderAddress        common.Address
+	OwnerAddress         common.Address
+	BidAmount            *big.Int
+	Timestamp            *big.Int
+	ReserveAmount        *big.Int
+	FinishTime           *big.Int
+	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+	BuyerFee             *big.Int
+}, error) {
+	return _AM.Contract.AuctionHistory(&_AM.CallOpts, arg0, arg1, arg2)
 }
 
 // BidHistory is a free data retrieval call binding the contract method 0x61ab546e.
@@ -335,6 +448,96 @@ func (_AM *AMSession) EarlyFinalizeFeePercentage() (uint8, error) {
 // Solidity: function earlyFinalizeFeePercentage() view returns(uint8)
 func (_AM *AMCallerSession) EarlyFinalizeFeePercentage() (uint8, error) {
 	return _AM.Contract.EarlyFinalizeFeePercentage(&_AM.CallOpts)
+}
+
+// GetAuctionData is a free data retrieval call binding the contract method 0xbb5ce40d.
+//
+// Solidity: function getAuctionData(address contractAddress, uint256 tokenID) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt)
+func (_AM *AMCaller) GetAuctionData(opts *bind.CallOpts, contractAddress common.Address, tokenID *big.Int) (struct {
+	IsRunning            bool
+	AuctionID            *big.Int
+	BidderAddress        common.Address
+	OwnerAddress         common.Address
+	BidAmount            *big.Int
+	Timestamp            *big.Int
+	ReserveAmount        *big.Int
+	FinishTime           *big.Int
+	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+}, error) {
+	var out []interface{}
+	err := _AM.contract.Call(opts, &out, "getAuctionData", contractAddress, tokenID)
+
+	outstruct := new(struct {
+		IsRunning            bool
+		AuctionID            *big.Int
+		BidderAddress        common.Address
+		OwnerAddress         common.Address
+		BidAmount            *big.Int
+		Timestamp            *big.Int
+		ReserveAmount        *big.Int
+		FinishTime           *big.Int
+		FinalizeOnReserveMet bool
+		FinishNote           [32]byte
+		WillCloseAt          *big.Int
+	})
+	if err != nil {
+		return *outstruct, err
+	}
+
+	outstruct.IsRunning = *abi.ConvertType(out[0], new(bool)).(*bool)
+	outstruct.AuctionID = *abi.ConvertType(out[1], new(*big.Int)).(**big.Int)
+	outstruct.BidderAddress = *abi.ConvertType(out[2], new(common.Address)).(*common.Address)
+	outstruct.OwnerAddress = *abi.ConvertType(out[3], new(common.Address)).(*common.Address)
+	outstruct.BidAmount = *abi.ConvertType(out[4], new(*big.Int)).(**big.Int)
+	outstruct.Timestamp = *abi.ConvertType(out[5], new(*big.Int)).(**big.Int)
+	outstruct.ReserveAmount = *abi.ConvertType(out[6], new(*big.Int)).(**big.Int)
+	outstruct.FinishTime = *abi.ConvertType(out[7], new(*big.Int)).(**big.Int)
+	outstruct.FinalizeOnReserveMet = *abi.ConvertType(out[8], new(bool)).(*bool)
+	outstruct.FinishNote = *abi.ConvertType(out[9], new([32]byte)).(*[32]byte)
+	outstruct.WillCloseAt = *abi.ConvertType(out[10], new(*big.Int)).(**big.Int)
+
+	return *outstruct, err
+
+}
+
+// GetAuctionData is a free data retrieval call binding the contract method 0xbb5ce40d.
+//
+// Solidity: function getAuctionData(address contractAddress, uint256 tokenID) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt)
+func (_AM *AMSession) GetAuctionData(contractAddress common.Address, tokenID *big.Int) (struct {
+	IsRunning            bool
+	AuctionID            *big.Int
+	BidderAddress        common.Address
+	OwnerAddress         common.Address
+	BidAmount            *big.Int
+	Timestamp            *big.Int
+	ReserveAmount        *big.Int
+	FinishTime           *big.Int
+	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+}, error) {
+	return _AM.Contract.GetAuctionData(&_AM.CallOpts, contractAddress, tokenID)
+}
+
+// GetAuctionData is a free data retrieval call binding the contract method 0xbb5ce40d.
+//
+// Solidity: function getAuctionData(address contractAddress, uint256 tokenID) view returns(bool isRunning, uint256 auctionID, address bidderAddress, address ownerAddress, uint256 bidAmount, uint256 timestamp, uint256 reserveAmount, uint256 finishTime, bool finalizeOnReserveMet, bytes32 finishNote, uint256 willCloseAt)
+func (_AM *AMCallerSession) GetAuctionData(contractAddress common.Address, tokenID *big.Int) (struct {
+	IsRunning            bool
+	AuctionID            *big.Int
+	BidderAddress        common.Address
+	OwnerAddress         common.Address
+	BidAmount            *big.Int
+	Timestamp            *big.Int
+	ReserveAmount        *big.Int
+	FinishTime           *big.Int
+	FinalizeOnReserveMet bool
+	FinishNote           [32]byte
+	WillCloseAt          *big.Int
+}, error) {
+	return _AM.Contract.GetAuctionData(&_AM.CallOpts, contractAddress, tokenID)
 }
 
 // GetHighBid is a free data retrieval call binding the contract method 0x4c9e732a.
@@ -635,6 +838,37 @@ func (_AM *AMCallerSession) SalesFeePercentage() (uint8, error) {
 	return _AM.Contract.SalesFeePercentage(&_AM.CallOpts)
 }
 
+// ShowFeesAccrued is a free data retrieval call binding the contract method 0xffac78b4.
+//
+// Solidity: function showFeesAccrued() view returns(uint256 acFees)
+func (_AM *AMCaller) ShowFeesAccrued(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _AM.contract.Call(opts, &out, "showFeesAccrued")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// ShowFeesAccrued is a free data retrieval call binding the contract method 0xffac78b4.
+//
+// Solidity: function showFeesAccrued() view returns(uint256 acFees)
+func (_AM *AMSession) ShowFeesAccrued() (*big.Int, error) {
+	return _AM.Contract.ShowFeesAccrued(&_AM.CallOpts)
+}
+
+// ShowFeesAccrued is a free data retrieval call binding the contract method 0xffac78b4.
+//
+// Solidity: function showFeesAccrued() view returns(uint256 acFees)
+func (_AM *AMCallerSession) ShowFeesAccrued() (*big.Int, error) {
+	return _AM.Contract.ShowFeesAccrued(&_AM.CallOpts)
+}
+
 // ConfigureFeePercentages is a paid mutator transaction binding the contract method 0x7557d7b8.
 //
 // Solidity: function configureFeePercentages(uint8 earlyFinalize, uint8 removeListing, uint8 salesFee, uint8 bidIncrement) returns()
@@ -782,27 +1016,6 @@ func (_AM *AMTransactorSession) Setup() (*types.Transaction, error) {
 	return _AM.Contract.Setup(&_AM.TransactOpts)
 }
 
-// ShowFeesAccrued is a paid mutator transaction binding the contract method 0xffac78b4.
-//
-// Solidity: function showFeesAccrued() returns(uint256 acFees)
-func (_AM *AMTransactor) ShowFeesAccrued(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _AM.contract.Transact(opts, "showFeesAccrued")
-}
-
-// ShowFeesAccrued is a paid mutator transaction binding the contract method 0xffac78b4.
-//
-// Solidity: function showFeesAccrued() returns(uint256 acFees)
-func (_AM *AMSession) ShowFeesAccrued() (*types.Transaction, error) {
-	return _AM.Contract.ShowFeesAccrued(&_AM.TransactOpts)
-}
-
-// ShowFeesAccrued is a paid mutator transaction binding the contract method 0xffac78b4.
-//
-// Solidity: function showFeesAccrued() returns(uint256 acFees)
-func (_AM *AMTransactorSession) ShowFeesAccrued() (*types.Transaction, error) {
-	return _AM.Contract.ShowFeesAccrued(&_AM.TransactOpts)
-}
-
 // SubmitNewBid is a paid mutator transaction binding the contract method 0x326557bc.
 //
 // Solidity: function submitNewBid(address nftContract, uint256 tokenId) payable returns()
@@ -864,6 +1077,48 @@ func (_AM *AMSession) WithdrawAll() (*types.Transaction, error) {
 // Solidity: function withdrawAll() returns()
 func (_AM *AMTransactorSession) WithdrawAll() (*types.Transaction, error) {
 	return _AM.Contract.WithdrawAll(&_AM.TransactOpts)
+}
+
+// Fallback is a paid mutator transaction binding the contract fallback function.
+//
+// Solidity: fallback() payable returns()
+func (_AM *AMTransactor) Fallback(opts *bind.TransactOpts, calldata []byte) (*types.Transaction, error) {
+	return _AM.contract.RawTransact(opts, calldata)
+}
+
+// Fallback is a paid mutator transaction binding the contract fallback function.
+//
+// Solidity: fallback() payable returns()
+func (_AM *AMSession) Fallback(calldata []byte) (*types.Transaction, error) {
+	return _AM.Contract.Fallback(&_AM.TransactOpts, calldata)
+}
+
+// Fallback is a paid mutator transaction binding the contract fallback function.
+//
+// Solidity: fallback() payable returns()
+func (_AM *AMTransactorSession) Fallback(calldata []byte) (*types.Transaction, error) {
+	return _AM.Contract.Fallback(&_AM.TransactOpts, calldata)
+}
+
+// Receive is a paid mutator transaction binding the contract receive function.
+//
+// Solidity: receive() payable returns()
+func (_AM *AMTransactor) Receive(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _AM.contract.RawTransact(opts, nil) // calldata is disallowed for receive function
+}
+
+// Receive is a paid mutator transaction binding the contract receive function.
+//
+// Solidity: receive() payable returns()
+func (_AM *AMSession) Receive() (*types.Transaction, error) {
+	return _AM.Contract.Receive(&_AM.TransactOpts)
+}
+
+// Receive is a paid mutator transaction binding the contract receive function.
+//
+// Solidity: receive() payable returns()
+func (_AM *AMTransactorSession) Receive() (*types.Transaction, error) {
+	return _AM.Contract.Receive(&_AM.TransactOpts)
 }
 
 // AMOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the AM contract.
